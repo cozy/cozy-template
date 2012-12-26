@@ -1,6 +1,7 @@
 { "name": "cozy-template-js"
 , "version": "0.0.1"
-, "engines": ["node >= 0.4.0"]
+, "engines": ["node >= 0.6.0"]
+, "license": "MIT"
 , "main": "server.js"
 , "dependencies":
   { "jade":             "= 0.27.6"
