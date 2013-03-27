@@ -3,14 +3,13 @@ var express;
 express = require('express');
 
 module.exports = function(compound) {
-  var app;
+  var app = compound.app;
 
-  app = compound.app;
-  return app.configure('development', function() {
+  app.configure('development', function () {
     app.enable('log actions');
     app.enable('env info');
     app.enable('watch');
-    return app.use(express.errorHandler({
+    app.use(express.errorHandler({
       dumpExceptions: true,
       showStack: true
     }));

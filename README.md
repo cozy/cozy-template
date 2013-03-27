@@ -8,7 +8,7 @@ application. Just fork it and code while focusing only on your features !
 Clone this repository, install dependencies and run server (it requires Node.js)
     
     git clone git://github.com/mycozycloud/cozy-template-js.git
-    cd cozy-tutorial
+    cd cozy-template-js
     npm install
     node server.js
 

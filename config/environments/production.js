@@ -1,9 +1,8 @@
-module.exports = function(compound) {
-  var app;
+module.exports = function(compound) { 
+  var app = compound.app;
 
-  app = compound.app;
-  return app.configure('production', function() {
+  app.configure('production', function () {
     app.use(require('express').errorHandler());
-    return app.enable('quiet');
+    app.enable('quiet');
   });
 };

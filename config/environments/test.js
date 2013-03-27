@@ -3,10 +3,8 @@ var express;
 express = require('express');
 
 module.exports = function(compound) {
-  var app;
-
-  app = compound.app;
-  return app.configure('test', function() {
+  var app = compound.app;
+  app.configure('test', function () {
     app.use(express.errorHandler({
       dumpExceptions: true,
       showStack: true
@@ -14,6 +12,6 @@ module.exports = function(compound) {
     app.enable('quiet');
     app.enable('view cache');
     app.enable('model cache');
-    return app.enable('eval cache');
+    app.enable('eval cache');
   });
 };
