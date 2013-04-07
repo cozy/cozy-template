@@ -1,9 +1,8 @@
-app.configure('production', function () {
-    app.enable('view cache');
-    app.enable('model cache');
-    app.enable('eval cache');
-    app.disable('assets timestamps');
-    app.use(require('express').errorHandler());
-    app.settings.quiet = true;
-});
+module.exports = function(compound) { 
+  var app = compound.app;
 
+  app.configure('production', function () {
+    app.use(require('express').errorHandler());
+    app.enable('quiet');
+  });
+};
