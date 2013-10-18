@@ -5,7 +5,7 @@ module.exports = Backbone.Router.extend({
     '': 'home'
   },
 
-  home: function() {
+  home: function () {
     $('body').html(application.homeView.render().el);
   }
 });

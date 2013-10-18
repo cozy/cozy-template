@@ -1,22 +1,31 @@
-{ "name": "cozy-template-js"
-, "version": "0.0.1"
-, "engines": ["node = 0.8.x"]
-, "license": "MIT"
-, "main": "server.js"
-, "dependencies":
-  { "jade":             "= 0.27.6"
-  , "express":          "= 3.0.0"
-  , "connect":          "= 2.6.1"
-  , "compound":         "= 1.1.5-17"
-  , "jugglingdb":       "= 0.2.0-23"
-  , "jugglingdb-cozy-adapter": "0.3.1"
-  }
-, "devDependencies":
-  { "should":           "= 1.2.0"
-  , "mocha":            "= 1.6.0"
-  , "chai":             "= 1.3.0"
-  }
-, "scripts":
-  { "test": "nodeunit test/*/*"
-  }
+{
+  "name": "cozy-template-js",
+  "version": "1.0.0",
+  "engines": [
+    "node = 0.8.x"
+  ],
+  "description": "A template project for Cozy applications written in JavaScript",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mycozycloud/cozy-template-js.git"
+  },
+  "main": "server.js",
+  "dependencies": {
+    "americano": "0.2.10",
+    "americano-cozy": "0.1.4"
+  },
+  "devDependencies": {
+    "should": "2.0.1",
+    "mocha": "1.13.0",
+    "request-json": "0.4.4",
+    "cozy-fixtures": "1.0.1",
+    "jslint": "0.2.0"
+  },
+  "scripts": {
+    "test": "cake tests",
+    "start": "node server.js"
+  },
+  "cozy-permissions": {},
+  "cozy-displayName": "Template"
 }
