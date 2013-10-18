@@ -6,5 +6,5 @@ module.exports = {
   'foo': {
     get: index.main
   }
-}
+};
 

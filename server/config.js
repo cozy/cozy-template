@@ -3,7 +3,7 @@ var config = {
   common: [
     americano.bodyParser(),
     americano.methodOverride(),
-    americano.errorHandler({ dumpExceptions: true,showStack: true}),
+    americano.errorHandler({ dumpExceptions: true, showStack: true}),
     americano.static(__dirname + '/../client/public', {maxAge: 86400000})
   ],
   development: [
@@ -15,5 +15,6 @@ var config = {
   plugins: [
     'americano-cozy'
   ]
-}
+};
+
 module.exports = config;
