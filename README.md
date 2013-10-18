@@ -1,7 +1,7 @@
 # Description
 
 Cozy Template is a Javascript template project to start quickly your own 
-application. Just fork it and code while focusing only on your features !
+application.
 
 # Run
 
