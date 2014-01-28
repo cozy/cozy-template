@@ -1,4 +1,5 @@
 *.swp
+*~
 lib-cov
 *.seed
 *.csv
