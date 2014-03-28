@@ -15,13 +15,6 @@ Clone this repository, install dependencies and run server (it requires Node.js)
     npm install
     node server.js
 
-## Cozy tutorial
-
-Code sources for the 
-"[Hack your Cozy App](http://cozy.io/hack/getting-started/)" Tutorial. 
-
-You can see code source of each tutorial steps via this repository branches.
-
 ## What is Cozy?
 
 ![Cozy Logo](https://raw.github.com/mycozycloud/cozy-setup/gh-pages/assets/images/happycloud.png)
