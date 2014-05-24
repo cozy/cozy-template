@@ -21,19 +21,19 @@ exports.config =
       order:
         before: [
           'vendor/javascripts/console-helper.js',
-          'vendor/javascripts/jquery-2.1.0.min.js',
-          'vendor/javascripts/underscore-1.5.2.min.js',
-          'vendor/javascripts/backbone-1.1.0.min.js',
+          'vendor/javascripts/jquery-2.1.1.min.js',
+          'vendor/javascripts/underscore-1.6.0.min.js',
+          'vendor/javascripts/backbone-1.1.2.min.js',
           'vendor/javascripts/backbone-mediator.js',
-          'vendor/javascripts/bootstrap-3.0.3.min.js',
+          'vendor/javascripts/bootstrap-3.1.1.min.js',
         ]
 
     stylesheets:
       defaultExtension: 'styl'
       joinTo: 'stylesheets/app.css'
       order:
-        before: ['vendor/stylesheets/normalize.css']
-        after: ['vendor/stylesheets/helpers.css']
+        before: []
+        after: []
     templates:
       defaultExtension: 'jade'
       joinTo: 'javascripts/app.js'
