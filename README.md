@@ -10,8 +10,8 @@ http://cozy.io/hack/getting-started/
 
 Clone this repository, install dependencies and run server (it requires Node.js)
 
-    git clone git://github.com/mycozycloud/cozy-template-js.git
-    cd cozy-template-js
+    git clone git://github.com/cozyd/cozy-template.git
+    cd cozy-template
     npm install
     node server.js
 
@@ -31,6 +31,6 @@ own one too.
 You can reach the Cozy community via various support:
 
 * IRC #cozycloud on irc.freenode.net
-* Post on our [Forum](https://groups.google.com/forum/?fromgroups#!forum/cozy-cloud)
-* Post issues on the [Github repos](https://github.com/mycozycloud/)
+* Post on our [Forum](https://forum.cozy.io)
+* Post issues on the [Github repos](https://github.com/cozy/)
 * Via [Twitter](http://twitter.com/mycozycloud)
