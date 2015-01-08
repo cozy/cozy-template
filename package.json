@@ -2,7 +2,7 @@
   "name": "cozy-template-js",
   "version": "1.0.0",
   "engines": [
-    "node = 0.8.x"
+    "node = 0.10.x"
   ],
   "description": "A template project for Cozy applications written in JavaScript",
   "license": "MIT",
@@ -12,8 +12,8 @@
   },
   "main": "server.js",
   "dependencies": {
-    "americano": "0.3.5",
-    "americano-cozy": "0.2.5"
+    "americano": "0.3.11",
+    "americano-cozy": "0.2.11"
   },
   "devDependencies": {
     "should": "2.0.1",
