@@ -1,8 +1,8 @@
-// See documentation on https://github.com/frankrousseau/americano-cozy/#models
+// See documentation on https://github.com/aenario/cozydb/
 
-var americano = require('americano');
+var cozydb = require('cozydb');
 
-var TemplateModel = americano.getModel('Template', {
+var TemplateModel = cozydb.getModel('Template', {
   title: String,
   date: Date,
   content: String
