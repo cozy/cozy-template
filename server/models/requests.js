@@ -1,12 +1,12 @@
 /* See documentation on
- https://github.com/frankrousseau/americano-cozy/#requests */
+ https://github.com/aenario/cozydb/*/
 
-var americano = require('americano');
+var cozydb = require('cozydb');
 
 module.exports = {
   template: {
     // shortcut for emit doc._id, doc
-    all: americano.defaultRequests.all,
+    all: cozydb.defaultRequests.all,
 
     /* create all the requests you want!
     This request will gives you the number of documents that share
