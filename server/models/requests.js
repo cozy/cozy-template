@@ -1,5 +1,5 @@
 /* See documentation on
- https://github.com/aenario/cozydb/*/
+ https://github.com/cozy/cozy-db */
 
 var cozydb = require('cozydb');
 
