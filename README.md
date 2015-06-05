@@ -10,7 +10,7 @@ http://cozy.io/hack/getting-started/
 
 Clone this repository, install dependencies and run server (it requires Node.js)
 
-    git clone git://github.com/cozyd/cozy-template.git
+    git clone git://github.com/cozy/cozy-template.git
     cd cozy-template
     npm install
     node server.js
