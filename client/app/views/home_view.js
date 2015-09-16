@@ -1,7 +1,9 @@
-var View = require('./view');
+var BaseView = require('../lib/base_view');
 var template = require('./templates/home');
 
-module.exports = View.extend({
-  id: 'home-view',
+var HomeView = BaseView.extend({
+  el: 'body',
   template: template
 });
+
+module.exports = HomeView;

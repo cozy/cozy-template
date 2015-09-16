@@ -6,6 +6,13 @@ module.exports = Backbone.Router.extend({
   },
 
   home: function () {
-    $('body').html(application.homeView.render().el);
+    application.menuCollection.push([
+      {link: "https://github.com/mycozycloud/cozy-setup/wiki",
+        name: 'Documentation'},
+      {link: "https://github.com/mycozycloud/cozy-setup/wiki/Getting-started",
+        name: 'Getting Started'},
+      {link: "https://github.com/mycozycloud", name: 'Github'}
+    ]);
+
   }
 });
