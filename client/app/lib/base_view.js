@@ -1,7 +1,7 @@
 require('lib/view_helper');
 
 // Base class for all views.
-module.exports = Backbone.View.extend({
+var BaseView = Backbone.View.extend({
   initialize: function () {
     this.render = _.bind(this.render, this);
   },
@@ -17,3 +17,5 @@ module.exports = Backbone.View.extend({
 
   afterRender: function () { return null; }
 });
+
+module.exports = BaseView;

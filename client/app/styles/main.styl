@@ -1,88 +1,191 @@
 @import 'nib'
 
+.sidebar
+    z-index: 1000
+    position: fixed
+    left: 0px
+    top: 0px
+    width: 20%
+    height: 100%
+    overflow-x: hidden
+    overflow-y: auto
+
+.content
+    background-color grey
+    position: fixed
+    right: 0px
+    top: 0px
+    height: 100%
+    overflow-x: hidden
+    overflow-y: auto
+    width: 80%
+
+*
+  box-sizing: border-box
+
+html,
 body
-  background: #91A2C0
-  font: bold 18px "Helvetica Neue", Arial, Helvetica, sans-serif
+    height 100%
+    width 100%
 
-ul
-  list-style-type: none
-
-a, a:visited
-  color: #F95A5A
-  text-decoration: none
-
-a:hover
-  color: #665248
-
-#home-view
-  width: 600px
-  height: 200px
-  margin: 20px auto
-
-  #content
-    background: #FFF
-    padding: 20px
-    border-radius: 4px
-
-/* Default font settings */
 body
-  font-size: 15px
-  color: #666
-  background: #fff
-  font-family: "KievitPro", "ff-kievit-web-pro-1","ff-kievit-web-pro-2", "Helvetica Neue", Arial, Helvetica, sans-serif
+    text-rendering optimizeLegibility
 
-/* Headings */
-h1, h2, h3, h4, h5
-  font-weight: normal
-  color: #222
-  clear: left
+body,
+input
+    color #444
+    font 300 16px Geneva, Verdana, "Lucida Sans", "Lucida Grande", "Lucida Sans Unicode", sans-serif
+    line-height 1.2
 
-h1
-  font-size: 5em
-  line-height: 1.4
-  margin-bottom: 0.5em
+a,
+a:visited
+    color #0086cc
+    text-decoration none
 
-h2
-  font-size: 2em
-  line-height: 1
-  margin-bottom: 0.5em
+    &:hover
+        text-decoration underline
 
-/* Text elements */
-p
-  margin: 0 0 1.5em
 
-a:focus, a:hover
-  color: #F95A5A
-  text-decoration: underline
-a
-  color: #F95A5A
-  text-decoration: none
+// Layout
 
-/* Lists */
-ul, ol
-  margin: 0 1.5em 1.5em 0
-  list-style-type: none
+.layout-container
+    width 940px
 
-/* Style */
-#content
-  width: 605px
-  margin: 0 auto
-  margin-top: 40px
-  margin-bottom: 60px
+.layout-centered
+    margin 0 auto
 
-h1
-  background: #91A2C0
-  background-repeat: no-repeat
-  background-position: 2px
-  color: #fff
-  width: 330px
-  padding-left: 18px
-  border-radius: 5px
+.layout-left
+    float left
 
-#props
-  position: relative
-  top: 36px
-  font-size: 18px
-  padding-left: 373px
-  color: #eee
-  font-style: italic
+.layout-right
+    float right
+
+.layout-to-left
+    left auto
+    right 0
+
+.layout-to-right
+    right auto
+    left 0
+
+
+
+@media (max-width: 480px)
+    // Landscape phones and down
+
+    body
+        padding 0 20px
+        text-rendering optimizeSpeed
+
+    .layout-container
+        width auto
+
+@media (max-width: 767px)
+    // Landscape phone to portrait tablet
+
+    body
+        padding 0 20px
+        text-rendering optimizeSpeed
+
+    .layout-container
+        width auto
+
+@media (min-width: 768px) and (max-width: 979px)
+    // Portrait tablet to landscape and desktop
+
+    .layout-container
+        width 724px
+
+@media (min-width: 1200px)
+    // Large desktop
+
+    .layout-container
+        width 1170px
+
+
+
+[data-state~="default"],
+[data-state~="enabled"]
+    cursor inherit
+    opacity 1
+    transition  opacity 0.2s linear
+
+[data-state~="disabled"],
+    cursor not-allowed
+    opacity 0.5
+    transition  opacity 0.2s linear
+
+[data-state~="hidden"]
+    display none
+
+[data-state~="visible"]
+    visibility visible
+
+[data-state~="invisible"]
+    visibility hidden
+
+[data-state~="waiting"],
+[data-state~="loading"]
+    cursor wait
+
+[data-state~="success"],
+[data-state~="valid"]
+    border-color #82cf82
+    color #82cf82
+    transition color 0.2s linear, border-color 0.2s linear
+
+[data-state~="error"],
+[data-state~="invalid"]
+    border-color #f0dddd
+    color #f0dddd
+    transition color 0.2s linear, border-color 0.2s linear
+
+
+// UI
+
+// Button
+.ui-button,
+a.ui-button,
+button.ui-button
+    background-color #eee
+    background-image linear-gradient(top, #fafafa, #eaeaea)
+    background-repeat repeat-x
+    border 1px solid #c9c9c9
+    border-radius 3px
+    box-shadow inset 0 1px 0 rgba(255, 255, 255, 0.3), 0 1px 3px rgba(0, 0, 0, 0.1)
+    color #777
+    font-weight bold
+    cursor pointer
+    display inline-block
+    font-size 14px
+    line-height 18px
+    text-align center
+    text-decoration none
+    text-shadow -1px -1px 0 #fff
+    transition all 0.1s linear
+    padding 5px 10px
+    vertical-align middle
+
+    &:hover
+        color #777
+        text-decoration none
+
+    &:active,
+    &[data-state="selected"]
+        box-shadow inset 0 1px 10px rgba(0, 0, 0, 0.2)
+
+// List
+.ui-list
+    margin 0
+    padding 0
+    list-style none
+
+.ui-grid
+    @extend .ui-list
+
+    li
+        display inline-block
+        margin-right -1px
+
+        &:last-child
+            margin-right 0

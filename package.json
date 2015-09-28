@@ -16,10 +16,10 @@
     "cozydb": "0.0.19"
   },
   "devDependencies": {
-    "should": "2.0.1",
-    "mocha": "1.13.0",
-    "request-json": "0.4.4",
-    "cozy-fixtures": "1.0.1",
+    "should": "4.0.1",
+    "mocha": "1.20.1",
+    "request-json": "0.4.10",
+    "cozy-fixtures": "1.1.1",
     "jslint": "0.2.0"
   },
   "scripts": {

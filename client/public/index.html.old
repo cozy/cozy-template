@@ -1,0 +1,34 @@
+<!doctype html>
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"><![endif]-->
+<!--[if IE 7]><html class="no-js lt-ie9 lt-ie8" lang="en"><![endif]-->
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en"><![endif]-->
+<!--[if gt IE 8]><!--><html class="no-js" lang="en"><!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>Example Cozy application</title>
+        <meta name="description" content="">
+
+        <!-- Don't forget to add a favicon and app icons.
+             See http://realfavicongenerator.net -->
+
+        <!-- You should probably add a custom build of modernizr to detect
+             browser supported features. See http://modernizr.com/download/ -->
+
+        <link rel="stylesheet" href="/fonts/fonts.css">
+        <link rel="stylesheet" href="stylesheets/app.css">
+    </head>
+
+    <body class="application">
+        <!--[if lt IE 8]>
+        <p class="chromeframe">You are using an outdated browser. <a href="http://browsehappy.com/">Upgrade your browser today</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to better experience this site.</p>
+        <![endif]-->
+
+        <!-- Your Markup -->
+
+        <script src="javascripts/vendor.js"></script>
+        <script src="javascripts/app.js" onload="require('initialize');"></script>
+    </body>
+</html>
