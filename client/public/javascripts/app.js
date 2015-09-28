@@ -110,26 +110,20 @@
   globals.require = require;
 })();
 require.register("application", function(exports, require, module) {
+var UserList = require('collections/user_list');
+
 // Application bootstrapper.
 var Application = {
   initialize: function () {
-    var HomeView = require('views/home_view'), Router = require('lib/router'),
-      MenuListView = require('views/menu_list_view'),
-      MenuCollection = require('../collections/menu_collection');
+	var Router = require('./router');
 
     // Ideally, initialized classes should be kept in controllers & mediator.
     // If you're making big webapp, here's more sophisticated skeleton
     // https://github.com/paulmillr/brunch-with-chaplin
-    this.homeView = new HomeView();
-    this.homeView.render();
 
 
-    this.menuCollection = new MenuCollection();
+	this.router = new Router();
 
-    this.menuListView = new MenuListView({collection: this.menuCollection});
-    this.menuListView.render();
-
-    this.router = new Router();
 
     if (typeof Object.freeze === 'function') {
       Object.freeze(this);
@@ -141,19 +135,16 @@ module.exports = Application;
 
 });
 
-require.register("collections/menu_collection", function(exports, require, module) {
-// Exemple of ViewCollection use
+require.register("collections/user_list", function(exports, require, module) {
+var User = require('../models/user');
 
-var MenuModel = require('../models/menu_model');
+var UserList = Backbone.Collection.extend({
+	model: User,
+	url: 'userlist',
 
-var MenuCollection = Backbone.Collection.extend({
-  model: MenuModel,
-  url: 'menu'
-
-  // Add some cool stuff here
 });
 
-module.exports = MenuCollection;
+module.exports = UserList;
 
 });
 
@@ -189,28 +180,6 @@ var BaseView = Backbone.View.extend({
 });
 
 module.exports = BaseView;
-
-});
-
-require.register("lib/router", function(exports, require, module) {
-var application = require('application');
-
-module.exports = Backbone.Router.extend({
-  routes: {
-    '': 'home'
-  },
-
-  home: function () {
-    application.menuCollection.push([
-      {link: "https://github.com/mycozycloud/cozy-setup/wiki",
-        name: 'Documentation'},
-      {link: "https://github.com/mycozycloud/cozy-setup/wiki/Getting-started",
-        name: 'Getting Started'},
-      {link: "https://github.com/mycozycloud", name: 'Github'}
-    ]);
-
-  }
-});
 
 });
 
@@ -304,77 +273,186 @@ require.register("lib/view_helper", function(exports, require, module) {
 
 });
 
-;require.register("models/menu_model", function(exports, require, module) {
+;require.register("models/user", function(exports, require, module) {
 
-var MenuModel = Backbone.Model.extend({
-  link: null,
-  name: null,
 
-  // Add some cool stuff here
+var User = Backbone.Model.extend({
+	name: null,
+	description: null,
+	history: null,
+
+
 });
 
-module.exports = MenuModel;
+module.exports = User;
+
+});
+
+require.register("router", function(exports, require, module) {
+
+var HomeView = require('views/home_view');
+
+var Router = Backbone.Router.extend({
+
+	mainView: null,
+
+	routes: {
+		''		: 'mainBoard'
+	},
+
+
+	mainBoard: function () {
+		view = new HomeView();
+
+		var self = this;
+		this.displayView(view, self);
+	},
+
+
+	displayView: function (view, self) {
+		if (self.mainView !== null) {
+			self.mainView.remove();
+		}
+		self.mainView = view;
+		$('.application').append(view.$el);
+		view.render();
+	}
+
+
+
+});
+
+module.exports = Router;
+
+});
+
+require.register("views/count_user_list_view", function(exports, require, module) {
+var ViewCollection = require('../lib/view_collection');
+var template = require('../views/templates/count_user_list');
+var CountUserRow = require('../models/user');
+
+var CountUserListView = ViewCollection.extend({
+	el: '#count-user-list',
+	template: template,
+
+	collectionEl: '#count-user-list-content',
+	itemView: CountUserRow,
+
+});
+
+module.exports = CountUserListView;
+
+});
+
+require.register("views/count_user_row_view", function(exports, require, module) {
+var BaseView = require('../lib/base_view');
+var template = require('templates/count_user_row');
+
+
+var CountUserRow = BaseView.extend({
+	template: template,
+
+});
+
+});
+
+require.register("views/count_view", function(exports, require, module) {
+var BaseView = require('../lib/base_view');
+var template = require('./templates/count');
+var CountUserListView = require('./count_user_list_view');
+var CountUserList = require('../collections/user_list');
+
+var CountView = BaseView.extend({
+	el: '#content-screen',
+	template: template,
+
+	initialize: function () {
+		this.listUser = new CountUserList();
+		BaseView.prototype.initialize.call(this);
+	},
+
+	afterRender: function () {
+		this.listUsersView = new CountUserListView();
+		this.listUsersView.render();
+	},
+
+});
+
+module.exports = CountView;
+
+
 
 });
 
 require.register("views/home_view", function(exports, require, module) {
 var BaseView = require('../lib/base_view');
 var template = require('./templates/home');
+var CountView = require('./count_view');
+var app = require('../application');
 
 var HomeView = BaseView.extend({
   el: 'body',
-  template: template
+  template: template,
+
+  //events: function () {
+	  //'click #menu-add-user': 'onAddUser',
+  //},
+
+
+  afterRender: function () {
+	  //this.countView = new CountView();
+	  //this.countView.render();
+	  console.log('test: ', window.test);
+  },
+
+  onAddUser: function () {
+	  app.allUsers.create();
+  }
+
+
+
 });
 
 module.exports = HomeView;
 
 });
 
-require.register("views/menu_list_view", function(exports, require, module) {
-// Exemple use ViewCollection
-
-var ViewCollection = require('../lib/view_collection');
-var MenuRowView = require('./menu_row_view');
-var template = require('./templates/menu_list');
-
-var MenuListView = ViewCollection.extend({
-  el: '#menu',
-  template: template,
-
-  collectionEl: 'ul#menu-collection',
-  itemView: MenuRowView,
-
-  initialize: function (attributes) {
-    this.collection = attributes.collection;
-    ViewCollection.prototype.initialize.call(this);
-  }
+require.register("views/templates/count", function(exports, require, module) {
+module.exports = function anonymous(locals, attrs, escape, rethrow, merge
+/**/) {
+attrs = attrs || jade.attrs; escape = escape || jade.escape; rethrow = rethrow || jade.rethrow; merge = merge || jade.merge;
+var buf = [];
+with (locals || {}) {
+var interp;
+buf.push('<div id="count-user-list"></div>');
+}
+return buf.join("");
+};
 });
 
-module.exports = MenuListView;
-
+require.register("views/templates/count_user_list", function(exports, require, module) {
+module.exports = function anonymous(locals, attrs, escape, rethrow, merge
+/**/) {
+attrs = attrs || jade.attrs; escape = escape || jade.escape; rethrow = rethrow || jade.rethrow; merge = merge || jade.merge;
+var buf = [];
+with (locals || {}) {
+var interp;
+buf.push('<label for="count-menu-users">Users</label><ul id="count-user-list-content" class="list-group"></ul>');
+}
+return buf.join("");
+};
 });
 
-require.register("views/menu_row_view", function(exports, require, module) {
-// Exemple use ViewCollection
-
-var BaseView = require('../lib/base_view');
-var template = require('./templates/menu_row');
-
-var MenuRowView = BaseView.extend({
-  template: template,
-
-  className: 'menu-element',
-  tagName: 'li',
-
-  getRenderData: function () {
-    return {model: this.model.toJSON()};
-  }
-
-  // Add some cool stuff here
-});
-
-module.exports = MenuRowView;
-
+require.register("views/templates/count_user_row", function(exports, require, module) {
+module.exports = function anonymous(locals, attrs, escape, rethrow, merge
+/**/) {
+attrs = attrs || jade.attrs; escape = escape || jade.escape; rethrow = rethrow || jade.rethrow; merge = merge || jade.merge;
+var buf = [];
+with (locals || {}) {
+var interp;
+}
+return buf.join("");
+};
 });
 
 require.register("views/templates/home", function(exports, require, module) {
@@ -384,35 +462,7 @@ attrs = attrs || jade.attrs; escape = escape || jade.escape; rethrow = rethrow |
 var buf = [];
 with (locals || {}) {
 var interp;
-buf.push('<div id="content"><h1>Cozy template</h1><h2>Welcome</h2><div id="menu"></div></div>');
-}
-return buf.join("");
-};
-});
-
-require.register("views/templates/menu_list", function(exports, require, module) {
-module.exports = function anonymous(locals, attrs, escape, rethrow, merge
-/**/) {
-attrs = attrs || jade.attrs; escape = escape || jade.escape; rethrow = rethrow || jade.rethrow; merge = merge || jade.merge;
-var buf = [];
-with (locals || {}) {
-var interp;
-buf.push('<p>Menu</p><ul id="menu-collection"></ul>');
-}
-return buf.join("");
-};
-});
-
-require.register("views/templates/menu_row", function(exports, require, module) {
-module.exports = function anonymous(locals, attrs, escape, rethrow, merge
-/**/) {
-attrs = attrs || jade.attrs; escape = escape || jade.escape; rethrow = rethrow || jade.rethrow; merge = merge || jade.merge;
-var buf = [];
-with (locals || {}) {
-var interp;
-buf.push('<a');
-buf.push(attrs({ 'href':("" + (model.link) + "") }, {"href":true}));
-buf.push('>' + escape((interp = model.name) == null ? '' : interp) + '</a>');
+buf.push('<div class="container-fluid"><div id="left-menu" class="sidebar"><label for="menu-section">Count</label><ul id="menu-section" class="nav nav-sidebar"><li><a id="menu-all-count">All Count</a></li><ul id="menu-list-count"></ul><li><a id="menu-add-count">Create a Count</a></li></ul><label for="menu-section">Users</label><ul id="menu-section" class="nav nav-sidebar"><li><a id="menu-all-user">All User</a></li><ul id="menu-list-user"></ul><li><a id="menu-add-user">Create a User</a></li></ul></div><div id="content-screen" class="content container-fluid"></div></div>');
 }
 return buf.join("");
 };

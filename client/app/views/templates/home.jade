@@ -1,4 +1,17 @@
-#content
-  h1 Cozy template
-  h2 Welcome
-  #menu
+div.container-fluid
+	#left-menu.sidebar
+		label(for='menu-section') Count
+		ul#menu-section.nav.nav-sidebar
+			li
+				a#menu-all-count All Count
+			ul#menu-list-count
+			li
+				a#menu-add-count Create a Count
+		label(for='menu-section') Users
+		ul#menu-section.nav.nav-sidebar
+			li
+				a#menu-all-user All User
+			ul#menu-list-user
+			li
+				a#menu-add-user Create a User
+	#content-screen.content.container-fluid
