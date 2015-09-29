@@ -8,7 +8,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/mycozycloud/cozy-template-js.git"
+    "url": "https://github.com/cozy/cozy-template.git"
   },
   "main": "server.js",
   "dependencies": {
