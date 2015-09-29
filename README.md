@@ -17,7 +17,7 @@ Clone this repository, install dependencies and run server (it requires Node.js)
 
 ## What is Cozy?
 
-![Cozy Logo](https://raw.github.com/mycozycloud/cozy-setup/gh-pages/assets/images/happycloud.png)
+![Cozy Logo](https://raw.github.com/cozy/cozy-setup/gh-pages/assets/images/happycloud.png)
 
 [Cozy](http://cozy.io) is a platform that brings all your web services in the
 same private space.  With it, your web apps and your devices can share data
