@@ -1,9 +1,9 @@
 # Description
 
-Cozy Template is a Javascript template project to start quickly your own 
+Cozy Template is a Javascript template project to start quickly your own
 application.
 
-Do you feel lost? No problem, check out our tutorial to get your started: 
+Do you feel lost? No problem, check out our tutorial to get your started:
 http://cozy.io/hack/getting-started/
 
 # Run
@@ -14,6 +14,12 @@ Clone this repository, install dependencies and run server (it requires Node.js)
     cd cozy-template
     npm install
     node server.js
+
+## Tests
+
+Unit tests are in `tests` directory and can be launched with:
+
+    npm run test
 
 ## What is Cozy?
 
@@ -26,7 +32,7 @@ with a new experience. You can install Cozy on your own hardware where no one
 profiles you. You install only the applications you want. You can build your
 own one too.
 
-## Community 
+## Community
 
 You can reach the Cozy community via various support:
 
