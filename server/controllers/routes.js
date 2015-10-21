@@ -1,4 +1,4 @@
-// See documentation on https://github.com/frankrousseau/americano#routes
+// See documentation on https://github.com/cozy/americano#routes
 
 var index = require('./index');
 

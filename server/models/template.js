@@ -1,4 +1,4 @@
-// See documentation on https://github.com/aenario/cozydb/
+// See documentation on https://github.com/cozy/cozy-db
 
 var cozydb = require('cozydb');
 
