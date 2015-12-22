@@ -15,7 +15,7 @@
     "start": "brunch watch --server"
   },
   "dependencies": {
-    "bruch": "1.8.5",
+    "brunch": "1.8.5",
     "javascript-brunch": ">= 1.0 < 1.4",
     "stylus-brunch": ">= 1.0 < 1.4",
 
