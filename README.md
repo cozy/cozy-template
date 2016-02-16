@@ -4,7 +4,7 @@ Cozy Template is a Javascript template project to start quickly your own
 application.
 
 Do you feel lost? No problem, check out our tutorial to get your started:
-http://cozy.io/hack/getting-started/
+https://docs.cozy.io/en/hack/getting-started/
 
 # Run
 
