@@ -1,9 +1,20 @@
 {
-  "name": "{appname}",
-  "version": "0.1.0",
-  "main": "app/index.js",
+  "name": "{app-name}",
+  "version": "3.0.0",
+  "main": "src/main.js",
   "scripts": {
-    "test": "npm run test"
+    "build": "NODE_ENV=production webpack --config webpack.config.js",
+    "clean": "rm -rf build",
+    "copy:manifest": "install -m0644 package.json README.md LICENSE build",
+    "deploy": "git-directory-deploy --username {github_username} --email {github_email} --directory public/ --branch build --repo=https://$GITHUB_TOKEN@github.com/{github_username}/{github_slug}.git",
+    "tx": "tx pull --all || true",
+    "postbuild": "npm run copy:manifest",
+    "prebuild": "npm-run-all lint clean tx",
+    "pretest": "npm run lint",
+    "prewatch": "npm run clean",
+    "lint": "standard 'src/**/*.js' 'test/**/*.js'",
+    "test": "true",
+    "watch": "NODE_ENV=development webpack-dev-server --config webpack.config.js --display-modules --display-chunks --inline --hot"
   },
   "repository": {
     "type": "git",
@@ -15,18 +26,6 @@
     "url": "https://github.com/{github_username}/{github_slug}/issues"
   },
   "homepage": "https://github.com/{github_username}/{github_slug}#readme",
-  "scripts": {
-    "build": "env OPTIMIZE=true webpack",
-    "clean": "rm -rf public",
-    "copy:manifest": "install -m0644 package.json README.md LICENSE public",
-    "deploy": "git-directory-deploy --username {github_username} --email {github_email} --directory public/ --branch build --repo=https://$GITHUB_TOKEN@github.com/{github_username}/{github_slug}.git",
-    "tx": "tx pull --all || true",
-    "postbuild": "npm run copy:manifest",
-    "prebuild": "npm-run-all clean tx",
-    "prewatch": "npm run clean",
-    "test": "true",
-    "watch": "webpack --display-modules --display-chunks --watch"
-  },
   "devDependencies": {
     "autoprefixer": "^6.5.0",
     "babel-core": "^6.0.0",
