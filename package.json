@@ -12,7 +12,7 @@
     "prebuild": "npm-run-all lint clean tx",
     "pretest": "npm run lint",
     "prewatch": "npm run clean",
-    "lint": "standard 'src/**/*.js' 'test/**/*.js'",
+    "lint": "standard 'src/**/*.js' 'src/**/*.jsx' 'test/**/*.js'",
     "test": "true",
     "watch": "NODE_ENV=development webpack-dev-server --config webpack.config.js --display-modules --display-chunks --inline --hot"
   },
