@@ -1,4 +1,4 @@
-import { h } from 'preact'
+import React from 'react'
 import { translate } from '../plugins/preact-polyglot'
 
 const App = ({ t }) => (
