@@ -1,6 +1,6 @@
 import 'babel-polyfill'
 
-import './styles'
+import './styles/main'
 
 import React from 'react'
 import { render } from 'react-dom'
