@@ -6,7 +6,7 @@ import React from 'react'
 import { render } from 'react-dom'
 import { I18n } from './plugins/preact-polyglot'
 
-import App from './components/App'
+import App from './components/app'
 
 const context = window.context || 'cozy'
 const lang = document.documentElement.getAttribute('lang') || 'en'
