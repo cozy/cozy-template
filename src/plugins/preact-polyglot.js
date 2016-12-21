@@ -28,12 +28,8 @@ const init = function (context, lang) {
 
   // Load context locales
   if (context) {
-    try {
-      const dict = require(`../contexts/${context}/locales/${lang}`)
-      polyglot.extend(dict)
-    } catch (e) {
-      console.error(`The dict phrases for context "${context}" can't be loaded`)
-    }
+    const dict = require(`../contexts/${context}/locales/${lang}`)
+    polyglot.extend(dict)
   }
 
   return polyglot
