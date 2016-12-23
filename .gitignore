@@ -3,7 +3,7 @@ node_modules/
 npm-debug.log
 
 # Build
-public/
+build/
 
 
 # Locales
