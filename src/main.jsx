@@ -8,7 +8,7 @@ import { I18n } from './plugins/preact-polyglot'
 
 import App from './components/app'
 
-const context = window.context || 'cozy'
+const context = window.context
 const lang = document.documentElement.getAttribute('lang') || 'en'
 
 document.addEventListener('DOMContentLoaded', () => {
