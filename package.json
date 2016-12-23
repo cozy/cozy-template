@@ -21,7 +21,8 @@
     "type": "git",
     "url": "git+https://github.com/{github_username}/{github_slug}.git"
   },
-  "author": "{github_username}",
+  "author": "Cozy Cloud <contact@cozycloud.cc> (https://cozy.io/)",
+  "contributors": [],
   "license": "AGPL-3.0",
   "bugs": {
     "url": "https://github.com/{github_username}/{github_slug}/issues"
