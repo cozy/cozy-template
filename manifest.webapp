@@ -1,0 +1,21 @@
+{
+  "name": "{app-name}",
+  "slug": "{app-slug}",
+  "icon": "icon.svg",
+  "description": "{app-description}",
+  "source": "{app-repo}",
+  "developer": {
+    "name": "Cozy",
+    "url": "https://cozy.io"
+  },
+  "default_locale": "en",
+  "locales": {},
+  "version": "3.0.0",
+  "licence": "AGPL-3.0",
+  "permissions": {
+    "settings/locale": {
+      "description": "Required to display a localized Ui",
+      "access": "read"
+    }
+  }
+}
