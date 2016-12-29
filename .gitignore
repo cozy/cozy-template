@@ -1,6 +1,8 @@
 # NPM
 node_modules/
 npm-debug.log
+yarn.lock # Remove this one on your app
+
 
 # Build
 build/
@@ -9,10 +11,6 @@ build/
 # Locales
 locales/
 !locales/en.json
-
-
-# Default
-!.gitkeep
 
 
 # OS generated files
@@ -29,3 +27,7 @@ desktop.ini
 # Editors / IDEs
 .floo
 .flooignore
+
+
+# Default
+!.gitkeep
