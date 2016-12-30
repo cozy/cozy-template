@@ -6,7 +6,7 @@
     "build": "NODE_ENV=production webpack --config webpack.config.js",
     "clean": "rm -rf build",
     "copy:manifest": "install -m0644 package.json README.md LICENSE build",
-    "deploy": "git-directory-deploy --directory build/ --branch build --repo=https://$GITHUB_TOKEN@github.com/{github_username}/{github_slug}.git",
+    "deploy": "git-directory-deploy --username Cozy --email contact@cozycloud.cc --directory build/ --branch build --repo=https://$GITHUB_TOKEN@github.com/{github_username}/{github_slug}.git",
     "tx": "tx pull --all || true",
     "postbuild": "npm run copy:manifest",
     "prebuild": "npm-run-all lint clean tx",
@@ -15,7 +15,7 @@
     "lint": "standard 'src/**/*.js' 'src/**/*.jsx'",
     "test": "jest",
     "watch": "NODE_ENV=development webpack --config webpack.config.js --watch --display-modules --display-chunks",
-    "watch:server": "NODE_ENV=development webpack-dev-server --config webpack.config.js --display-modules --display-chunks --inline --hot"
+    "watch:server": "NODE_ENV=development webpack-dev-server --config webpack.config.js --port 8082 --display-modules --display-chunks --inline --hot"
   },
   "repository": {
     "type": "git",
@@ -40,7 +40,6 @@
     "babel-runtime": "^6.0.0",
     "chai": "^3.5.0",
     "copy-webpack-plugin": "^4.0.1",
-    "cozy-ui": "^0.1.0",
     "css-loader": "^0.26.0",
     "css-mqpacker": "^4.0.1",
     "extract-text-webpack-plugin": "^1.0.1",
@@ -72,6 +71,7 @@
   },
   "dependencies": {
     "classnames": "^2.2.0",
+    "cozy-ui": "3.0.0-beta1",
     "node-polyglot": "^2.2.0",
     "preact": "^7.1.0",
     "preact-compat": "^3.9.0",
