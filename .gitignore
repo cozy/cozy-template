@@ -9,7 +9,7 @@ build/
 
 
 # Locales
-locales/
+locales/*
 !locales/en.json
 
 
