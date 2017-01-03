@@ -1,3 +1,5 @@
 {
-  "welcome": "Hello from your first Cozy App"
+  "App": {
+    "welcome": "Hello World!"
+  }
 }
