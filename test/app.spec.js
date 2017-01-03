@@ -1,5 +1,7 @@
 'use strict'
 
+/* eslint-env mocha, jest */
+
 import React from 'react'
 import renderer from 'react-test-renderer'
 
