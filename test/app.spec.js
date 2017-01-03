@@ -8,7 +8,7 @@ import App from '../src/components/App'
 
 test('Hello world', () => {
   const component = renderer.create(
-    <I18n context="cozy" lang="en">
+    <I18n context='cozy' lang='en'>
       <App />
     </I18n>
   )
