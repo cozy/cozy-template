@@ -5,7 +5,7 @@ import { translate } from '../plugins/preact-polyglot'
 import classNames from 'classnames'
 
 const App = ({ t }) => (
-  <h1 className={ classNames(styles['title']) }>{ t('welcome') }</h1>
+  <h1 className={classNames(styles['title'])}>{t('welcome')}</h1>
 )
 
 export default translate()(App)
