@@ -1,6 +1,6 @@
 'use strict'
 
-/* eslint-env mocha, jest */
+/* eslint-env jest */
 
 import React from 'react'
 import renderer from 'react-test-renderer'
@@ -10,7 +10,7 @@ import App from '../src/components/App'
 
 test('Hello world', () => {
   const component = renderer.create(
-    <I18n context='cozy' lang='en'>
+    <I18n lang='en'>
       <App />
     </I18n>
   )

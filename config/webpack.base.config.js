@@ -14,13 +14,13 @@ module.exports = {
     filename: build ? 'app.[hash].js' : 'app.js'
   },
   resolve: {
-    extensions: ['', '.js', '.jsx', '.json']
+    extensions: ['', '.js', '.json']
   },
   devtool: build ? '#cheap-module-source-map' : 'eval',
   module: {
     loaders: [
       {
-        test: /\.js(x)?$/,
+        test: /\.js$/,
         exclude: /node_modules/,
         loader: 'babel-loader'
       },
