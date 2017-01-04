@@ -2,19 +2,17 @@
 
 module.exports = {
   resolve: {
-    extensions: ['.jsx']
-  },
-  module: {
-    loaders : [{
-      test: /\.jsx$/,
-      exclude: /node_modules/,
-      loader: 'babel-loader'
-    }]
-  },
-  resolve: {
+    extensions: ['.jsx'],
     alias: {
       'react': 'preact-compat',
       'react-dom': 'preact-compat'
     }
+  },
+  module: {
+    loaders: [{
+      test: /\.jsx$/,
+      exclude: /node_modules/,
+      loader: 'babel-loader'
+    }]
   }
 }
