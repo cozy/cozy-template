@@ -4,7 +4,7 @@ import './styles/main'
 
 import React from 'react'
 import { render } from 'react-dom'
-import { I18n } from './plugins/preact-polyglot'
+import { I18n } from './lib/I18n'
 
 import App from './components/App'
 
