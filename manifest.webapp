@@ -17,5 +17,12 @@
       "description": "Required to display a localized Ui",
       "access": "read"
     }
+  },
+  "routes": {
+    "/": {
+      "folder": "/",
+      "index": "index.html",
+      "public": true
+    }
   }
 }
