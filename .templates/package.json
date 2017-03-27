@@ -1,12 +1,12 @@
 {
-  "name": "{app-name}",
+  "name": "<APP_NAME>",
   "version": "3.0.0",
   "main": "src/main.jsx",
   "scripts": {
     "build": "NODE_ENV=production webpack --config webpack.config.js --bail",
     "clean": "rm -rf build",
     "copy:manifest": "install -m0644 package.json README.md LICENSE build",
-    "deploy": "git-directory-deploy --username Cozy --email contact@cozycloud.cc --directory build/ --branch build --repo=https://$GITHUB_TOKEN@github.com/{github_username}/{github_slug}.git",
+    "deploy": "git-directory-deploy --username Cozy --email contact@cozycloud.cc --directory build/ --branch build --repo=https://$GITHUB_TOKEN@github.com/<USERNAME_GH>/<SLUG_GH>.git",
     "tx": "tx pull --all || true",
     "postbuild": "npm run copy:manifest",
     "prebuild": "npm-run-all lint clean tx",
@@ -15,19 +15,19 @@
     "lint": "standard 'src/**/*.js' 'src/**/*.jsx'",
     "test": "node --harmony_proxies node_modules/.bin/jest",
     "watch": "NODE_ENV=development webpack --config webpack.config.js --watch --display-modules --display-chunks",
-    "watch:server": "NODE_ENV=development webpack-dev-server --config webpack.config.js --port 8082 --display-modules --display-chunks --inline --hot"
+    "watch:standalone": "NODE_ENV=development webpack-dev-server --config webpack.config.js --port 8282 --display-modules --display-chunks --inline --hot"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/{github_username}/{github_slug}.git"
+    "url": "git+https://github.com/<USERNAME_GH>/<SLUG_GH>.git"
   },
   "author": "Cozy Cloud <contact@cozycloud.cc> (https://cozy.io/)",
   "contributors": [],
   "license": "AGPL-3.0",
   "bugs": {
-    "url": "https://github.com/{github_username}/{github_slug}/issues"
+    "url": "https://github.com/<USERNAME_GH>/<SLUG_GH>/issues"
   },
-  "homepage": "https://github.com/{github_username}/{github_slug}#readme",
+  "homepage": "https://github.com/<USERNAME_GH>/<SLUG_GH>#readme",
   "devDependencies": {
     "autoprefixer": "^6.5.0",
     "babel-core": "^6.0.0",
