@@ -1,9 +1,9 @@
 {
-  "name": "{app-name}",
-  "slug": "{app-slug}",
+  "name": "<APP_NAME>",
+  "slug": "<APP_NAME>",
   "icon": "icon.svg",
-  "description": "{app-description}",
-  "source": "{app-repo}",
+  "description": "<APP_SHORT_DESCRIPTION>",
+  "source": "https://github.com/<USERNAME_GH>/<SLUG_GH>.git@build",
   "developer": {
     "name": "Cozy",
     "url": "https://cozy.io"
