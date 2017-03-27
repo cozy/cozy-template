@@ -1,7 +1,7 @@
 # NPM
 node_modules/
 npm-debug.log
-yarn.lock # Remove this one on your app
+yarn-error.log
 
 
 # Build
@@ -29,5 +29,22 @@ desktop.ini
 .flooignore
 
 
+# Mobile
+mobile/hooks
+mobile/platforms
+mobile/plugins
+mobile/www
+mobile/keys
+
+
+# fastlane
+mobile/fastlane/README.md
+mobile/fastlane/report.xml
+mobile/fastlane/Error*.png
+mobile/fastlane/Preview.html
+mobile/Preview.html
+
+
 # Default
+# /!\ KEEP THIS SECTION THE LAST ONE
 !.gitkeep
