@@ -2,26 +2,24 @@
 
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const ScriptExtHtmlWebpackPlugin = require('script-ext-html-webpack-plugin')
+const PostCSSAssetsPlugin = require('postcss-assets-webpack-plugin')
 
+const {extractor, production} = require('./webpack.vars')
 const pkg = require(path.resolve(__dirname, '../package.json'))
 
-const build = process.env.NODE_ENV === 'production'
-
 module.exports = {
-  entry: path.resolve(__dirname, '../src/main'),
   output: {
-    path: path.resolve(__dirname, '../build'),
-    filename: build ? 'app.[hash].js' : 'app.js'
+    filename: 'app.js'
   },
   resolve: {
-    extensions: ['', '.js', '.json']
+    extensions: ['', '.js', '.json', '.css']
   },
-  devtool: build ? '#cheap-module-source-map' : 'eval',
   module: {
     loaders: [
       {
         test: /\.js$/,
-        exclude: /node_modules/,
+        exclude: /(node_modules|cozy-(bar|client-js))/,
         loader: 'babel-loader'
       },
       {
@@ -30,22 +28,43 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        loaders: [
-          'style-loader',
+        loader: extractor.extract('style', [
           'css-loader?importLoaders=1',
           'postcss-loader'
-        ]
+        ])
       }
+    ],
+    noParse: [
+      /localforage\/dist/
+    ]
+  },
+  postcss: () => {
+    return [
+      require('autoprefixer')(['last 2 versions'])
     ]
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: 'src/index.ejs',
+      template: path.resolve(__dirname, '../src/index.ejs'),
       title: pkg.name,
-      inject: false,
+      inject: 'head',
       minify: {
         collapseWhitespace: true
       }
+    }),
+    new ScriptExtHtmlWebpackPlugin({
+      defaultAttribute: 'defer'
+    }),
+    extractor,
+    new PostCSSAssetsPlugin({
+      test: /\.css$/,
+      plugins: [
+        require('css-mqpacker'),
+        require('postcss-discard-duplicates'),
+        require('postcss-discard-empty')
+      ].concat(
+        production ? require('csswring')({preservehacks: true, removeallcomments: true}) : []
+      )
     })
   ]
 }

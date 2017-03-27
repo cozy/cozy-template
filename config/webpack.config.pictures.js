@@ -1,6 +1,6 @@
 'use strict'
 
-const build = process.env.NODE_ENV === 'production'
+const {production} = require('./webpack.vars')
 
 module.exports = {
   module: {
@@ -12,8 +12,8 @@ module.exports = {
       },
       {
         test: /\.(png|gif|jpe?g|svg)$/i,
-        exclude: /(vendor|sprites|icons)/,
-        loader: `file?path=img&name=[name]${build ? '.[hash].' : '.'}[ext]`
+        exclude: /(sprites|icons)/,
+        loader: `file?path=img&name=[name]${production ? '.[hash]' : ''}.[ext]`
       }
     ]
   }
