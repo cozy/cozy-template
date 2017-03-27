@@ -16,8 +16,8 @@ What's Cozy?
 [Cozy] is a platform that brings all your web services in the same private space.  With it, your webapps and your devices can share data easily, providing you with a new experience. You can install Cozy on your own hardware where no one's tracking you.
 
 
-What's <APP_NAME>?
-------------------
+What's Cozy <APP_NAME>?
+-----------------------
 
 <APP_SHORT_DESCRIPTION>
 
@@ -29,7 +29,7 @@ _:pushpin: Note:_ we recommend to use [Yarn] instead of NPM for package manageme
 
 ### Install and run in dev mode
 
-Hacking the <APP_NAME> app requires you to [setup a dev environment][setup].
+Hacking the Cozy <APP_NAME> app requires you to [setup a dev environment][setup].
 
 You can then clone the app repository and install dependencies:
 
@@ -124,7 +124,7 @@ Feel free to read it and fix / update it if needed, all comments and feedback to
 
 ### Open a Pull-Request
 
-If you want to work on <APP_NAME> and submit code modifications, feel free to open pull-requests! See the [contributing guide][contribute] for more information about how to properly open pull-requests.
+If you want to work on Cozy <APP_NAME> and submit code modifications, feel free to open pull-requests! See the [contributing guide][contribute] for more information about how to properly open pull-requests.
 
 
 Community
@@ -141,7 +141,7 @@ As a _developer_, you must [configure the transifex client][tx-client], and clai
 
 ### Maintainer
 
-The lead maintainer for Cozy <APP_NAME> is <APP_MAINTAINER>, send him/her a :beers: to say hello!
+The lead maintainer for Cozy <APP_NAME> is [<APP_MAINTAINER>](https://github.com/<APP_MAINTAINER>), send him/her a :beers: to say hello!
 
 
 ### Get in touch
