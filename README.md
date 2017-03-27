@@ -57,9 +57,9 @@ $ git pull -u origin master:master
 
 ### That's it :rocket:!
 
-Congrats! Your app is now fully set. You can start coding in [`src`](src), and run it through a [Cozy-stack](https://cozy.github.io/cozy-stack/).
+Congrats! Your app is now fully set. You can start coding in [`src`](src), and run it through a [cozy-stack](https://cozy.github.io/cozy-stack/).
 
-You can find more informations about how to bootstrap a Cozy app in http://talks.m4dz.net/cozy-bootstrap-v3/.
+You can find more informations about how to bootstrap a Cozy app in the [Cozy's app bootstrap<sup>v3</sup>](http://talks.m4dz.net/cozy-bootstrap-v3/) talk.
 
 
 Community
@@ -67,7 +67,7 @@ Community
 
 ### Maintainer
 
-The lead maintainer for cozy-template and tooling is @m4dz, send him/her a :beers: to say hello!
+The lead maintainer for cozy-template and tooling is [@m4dz](https://github.com/m4dz), send him a :beers: to say hello!
 
 
 ### Get in touch
@@ -84,3 +84,11 @@ License
 -------
 
 cozy-template is developed by Cozy Cloud and distributed under the [AGPL v3 license][agpl-3.0].
+
+
+[cozy]: https://cozy.io "Cozy Cloud"
+[agpl-3.0]: https://www.gnu.org/licenses/agpl-3.0.html
+[freenode]: http://webchat.freenode.net/?randomnick=1&channels=%23cozycloud&uio=d4
+[forum]: https://forum.cozy.io/
+[github]: https://github.com/cozy/
+[twitter]: https://twitter.com/mycozycloud
