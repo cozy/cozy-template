@@ -97,7 +97,7 @@
   "dependencies": {
     "classnames": "^2.2.0",
     "cozy-bar": "3.0.0-beta14",
-    "cozy-client-js": "0.1.8",
+    "cozy-client-js": "0.2.0",
     "cozy-ui": "3.0.0-beta19",
     "date-fns": "^1.26.0",
     "node-polyglot": "^2.2.0",
