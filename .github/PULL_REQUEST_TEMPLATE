@@ -9,6 +9,7 @@ Before merging this PR, the following things must have been done:
 - [ ] Localized in english and french
 - [ ] All changes have test coverage
 - [ ] Updated README, if necessary
+- [ ] Make sure commit messages rely on the [Commitizen](http://commitizen.github.io/cz-cli/) format
 
 If this PR relies on changes in one of our internal libraries (cozy-client-js or cozy-ui, for example), please also do the following things:
 
