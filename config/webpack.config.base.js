@@ -13,6 +13,7 @@ module.exports = {
     filename: 'app.js'
   },
   resolve: {
+    modules: ['node_modules', 'src'],
     extensions: ['', '.js', '.json', '.css']
   },
   module: {

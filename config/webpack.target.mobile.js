@@ -6,6 +6,9 @@ const webpack = require('webpack')
 const {production} = require('./webpack.vars')
 
 module.exports = {
+  resolve: {
+    modules: ['node_modules', 'src', 'mobile/src']
+  },
   entry: [path.resolve(__dirname, '../mobile/src/main')],
   output: {
     path: path.resolve(__dirname, '../mobile/www')
