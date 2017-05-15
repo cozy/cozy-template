@@ -4,17 +4,19 @@ import './styles/main'
 
 import React from 'react'
 import { render } from 'react-dom'
-import { I18n } from './lib/I18n'
 
-import App from './components/App'
+const renderApp = function () {
+  const Root = require('./components/Root').default
+  render(<Root />, document.querySelector('[role=application]'))
+}
 
-const context = window.context
-const lang = document.documentElement.getAttribute('lang') || 'en'
+if (__DEV__) {
+  window.React = React
+  require('preact/devtools')
+}
 
-document.addEventListener('DOMContentLoaded', () => {
-  render((
-    <I18n context={context} lang={lang}>
-      <App />
-    </I18n>
-  ), document.querySelector('[role=application]'))
-})
+if (module.hot) {
+  module.hot.accept('./components/Root', () => requestAnimationFrame(renderApp))
+}
+
+document.addEventListener('DOMContentLoaded', renderApp)
