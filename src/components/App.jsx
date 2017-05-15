@@ -8,4 +8,4 @@ const App = ({ t }) => (
   <h1 className={classNames(styles['title'])}>{ t('App.welcome') }</h1>
 )
 
-export default translate()(App)
+export default translate(App)
