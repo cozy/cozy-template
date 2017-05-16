@@ -12,7 +12,7 @@ const common = merge(
   require('./config/webpack.config.vendors'),
   require('./config/webpack.config.manifest'),
   require(`./config/webpack.target.${target}`),
-  hotReload ? require('./config/webpack.hot-reload') : undefined
+  hotReload ? require('./config/webpack.config.hot-reload') : undefined
 )
 
 if (production) {
