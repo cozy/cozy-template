@@ -83,11 +83,17 @@ I18n.childContextTypes = {
 }
 
 // higher order decorator for components that need `t` and/or `f`
-export const translate = () => {
-  return (WrappedComponent) => {
-    const _translate = (props, context) => (
-      <WrappedComponent {...props} t={context.t} f={context.f} />
-    )
-    return _translate
-  }
+export const translate = (WrappedComponent) => {
+  const _translate = (props, context) => (
+    <WrappedComponent {...props} t={context.t} f={context.f} />
+  )
+
+  // Try to redefine the name so that it's better in React devtools
+  // Redefining the name of a function is not possible in some browsers
+  try {
+    const name = `translate(${WrappedComponent.name || WrappedComponent.displayName})`
+    Object.defineProperty(_translate, 'name', { value: name })
+  } catch (e) {}
+
+  return _translate
 }
