@@ -1,3 +1,5 @@
+/* global cozy */
+
 import 'babel-polyfill'
 
 import './styles/main'
@@ -10,13 +12,25 @@ const renderApp = function () {
   render(<Root />, document.querySelector('[role=application]'))
 }
 
-if (__DEV__) {
-  window.React = React
-  require('preact/devtools')
-}
-
 if (module.hot) {
   module.hot.accept('./components/Root', () => requestAnimationFrame(renderApp))
 }
 
-document.addEventListener('DOMContentLoaded', renderApp)
+document.addEventListener('DOMContentLoaded', () => {
+  const root = document.querySelector('[role=application]')
+  const data = root.dataset
+
+  cozy.client.init({
+    cozyURL: '//' + data.cozyDomain,
+    token: data.cozyToken
+  })
+
+  cozy.bar.init({
+    appName: data.cozyAppName,
+    iconPath: data.cozyIconPath,
+    lang: data.cozyLocale,
+    replaceTitleOnMobile: true
+  })
+
+  renderApp()
+})

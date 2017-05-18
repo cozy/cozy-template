@@ -3,9 +3,15 @@ const webpack = require('webpack')
 const PORT = 8282
 
 module.exports = {
-  entry: ['webpack/hot/dev-server'],
+  entry: ['webpack/hot/dev-server', 'preact/devtools'],
+  output: {
+    filename: 'app.[hash].min.js'
+  },
   plugins: [
-    new webpack.NamedModulesPlugin()
+    new webpack.NamedModulesPlugin(),
+    new webpack.ProvidePlugin({
+      'window.React': 'preact-compat'
+    })
   ],
   output: {
     publicPath: 'http://localhost:' + PORT + '/'

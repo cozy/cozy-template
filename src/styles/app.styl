@@ -1,4 +1,12 @@
-@import 'cozy-ui'
+@require 'cozy-ui'
 
-.title
-    color blue
+.appWrapper
+    @extend    $app-2panes-sticky
+
+.appContent
+    padded(30px)
+
+    @media (max-width: (768/basefont)rem)
+        padding 0
+
+
