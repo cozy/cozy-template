@@ -1,0 +1,29 @@
+{
+  "name": "Maif",
+  "slug": "Maif",
+  "icon": "icon.svg",
+  "description": "",
+  "version": "3.0.0",
+  "licence": "AGPL-3.0",
+  "source": "https://github.com/ptbrowne/cozy-maif.git@build",
+  "developer": {
+    "name": "Cozy",
+    "url": "https://cozy.io"
+  },
+  "default_locale": "en",
+  "locales": {},
+  "routes": {
+    "/": {
+      "folder": "/",
+      "index": "index.html",
+      "public": false
+    }
+  },
+  "permissions": {
+    "apps": {
+      "description": "Required by the cozy-bar to display the icons of the apps",
+      "type": "io.cozy.apps",
+      "verbs": ["GET"]
+    }
+  }
+}
