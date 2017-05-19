@@ -34,7 +34,6 @@ The [`my-app/.templates`](.templates) dir contains some templates you can use in
 
 - `<APP_NAME>`: the application name
 - `<APP_SHORT_DESCRIPTION>`: a quick app description
-- `<APP_PORT>`: app running port
 - `<APP_MAINTAINER>`: Github main maintainer username (don't forget `@` :))
 - `<SLUG_TX>`: transifex app slug
 - `<SLUG_GH>`: Github repository slug
