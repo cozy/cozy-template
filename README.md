@@ -43,6 +43,8 @@ The [`my-app/.templates`](.templates) dir contains some templates you can use in
 
 Don't forget to update your LICENSE too if needed.
 
+:warning: Concerning the application category, for now just `cozy` and `partners` are handled. Other categories will be handled soon, for now, you can let this field blank, it will be in the `others` category. If a category is empty, missing or not recognized, it will be `others` by default.
+
 ### Step 3: add your own repository
 
 Go to https://github.com/new and create a new repository for your app. Then add it to your app:
