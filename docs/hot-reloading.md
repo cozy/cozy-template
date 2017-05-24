@@ -21,5 +21,5 @@ And you can now visit your app via cozy-stack.
 
 ## Known issues
 
-1. It does not work with CSS
+1. It does not work with CSS modules
 2. It hot-reloads the app completely, not the individuals components, and state is lost :(
