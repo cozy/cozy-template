@@ -21,7 +21,8 @@ module.exports = {
       __SERVER__: false,
       __DEVELOPMENT__: false,
       __DEVTOOLS__: false,
-      __STACK_ASSETS__: true
+      __STACK_ASSETS__: true,
+      __DEV__: false
     })
   ]
 }
