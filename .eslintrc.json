@@ -1,20 +1,7 @@
 {
-  "extends": "standard",
-  "parserOptions": {
-    "ecmaVersion": 6,
-    "ecmaFeatures": {
-      "jsx": true
-    },
-    "sourceType": "module"
-  },
-  "plugins": ["react"],
-  "rules": {
-    "react/jsx-uses-vars": 1,
-    "react/jsx-uses-react": "error",
-    "react/react-in-jsx-scope": "error"
-  },
-    "env": {
-        "browser": true
-    }
+  "extends": ["standard", "standard-react"],
+  "env": {
+    "browser": true
+  }
 }
 
