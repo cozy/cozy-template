@@ -34,7 +34,7 @@ The [`my-app/.templates`](.templates) dir contains some templates you can use in
 
 - `<APP_NAME>`: the application name
 - `<APP_SHORT_DESCRIPTION>`: a quick app description
-- `<APP_PORT>`: app running port
+- `<APP_CATEGORY>`: the app category (used in the cozy-bar apps navigation)
 - `<APP_MAINTAINER>`: Github main maintainer username (don't forget `@` :))
 - `<SLUG_TX>`: transifex app slug
 - `<SLUG_GH>`: Github repository slug
@@ -42,6 +42,8 @@ The [`my-app/.templates`](.templates) dir contains some templates you can use in
 - `<USERNAME_GH>`: Github username
 
 Don't forget to update your LICENSE too if needed.
+
+:warning: Concerning the application category, for now just `cozy` and `partners` are handled. Other categories will be handled soon, for now, you can let this field blank, it will be in the `others` category. If a category is empty, missing or not recognized, it will be `others` by default.
 
 ### Step 3: add your own repository
 
