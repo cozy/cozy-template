@@ -11,7 +11,7 @@ module.exports = {
       {
         test: /\.styl$/,
         loader: extractor.extract('style', [
-          'css-loader?importLoaders=1&modules&localIdentName=[local]--[hash:base64:5]',
+          'css-loader?importLoaders=1&modules',
           'postcss-loader',
           'stylus-loader'
         ])
