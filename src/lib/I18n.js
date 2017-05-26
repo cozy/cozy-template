@@ -77,6 +77,13 @@ export class I18n extends Component {
   }
 }
 
+I18n.propTypes = {
+  lang: React.PropTypes.string,
+  context: React.PropTypes.object,
+  children: React.PropTypes.element,
+  locale: React.PropTypes.string
+}
+
 I18n.childContextTypes = {
   t: React.PropTypes.func,
   f: React.PropTypes.func
