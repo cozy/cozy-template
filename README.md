@@ -53,8 +53,8 @@ Go to https://github.com/new and create a new repository for your app. Then add 
 $ git remote add \
   origin \
   https://github.com/<USERNAME_GH>/<SLUG_GH>.git
-$ git add -am "Initial commit for my-app"
-$ git pull -u origin master:master
+$ git commit -am "Initial commit for my-app"
+$ git push -u origin master:master
 ```
 
 ### That's it :rocket:!
