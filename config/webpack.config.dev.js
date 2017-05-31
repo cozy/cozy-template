@@ -3,7 +3,7 @@
 const webpack = require('webpack')
 
 module.exports = {
-  devtool: 'inline-eval-cheap-source-map',
+  devtool: 'cheap-source-map',
   externals: ['cozy'],
   module: {
     loaders: [{
