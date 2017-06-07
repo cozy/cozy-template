@@ -20,7 +20,7 @@
     "prewatch:browser": "npm run clean:browser",
     "prewatch:mobile": "npm run clean:mobile",
     "lint": "npm-run-all --parallel 'lint:*'",
-    "lint:js": "standard 'src/**/*.js' 'src/**/*.jsx' 'test/**/*.js' 'mobile/src/**/*.js' 'mobile/src/**/*.jsx' 'mobile/test/**/*.js'",
+    "lint:js": "eslint 'src/**/*.js' 'src/**/*.jsx' 'test/**/*.js' 'mobile/src/**/*.js' 'mobile/src/**/*.jsx' 'mobile/test/**/*.js'",
     "lint:styles": "stylint src/styles --config ./.stylintrc",
     "stack:docker": "docker run --rm -it -p 8080:8080 -v \"$(pwd)/build\":/data/cozy-app/app cozy/cozy-app-dev",
     "test": "node --harmony_proxies node_modules/.bin/jest",
