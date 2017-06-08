@@ -8,4 +8,8 @@ const App = ({ t }) => (
   <h1 className={classNames(styles['title'])}>{ t('App.welcome') }</h1>
 )
 
+App.propTypes = {
+  t: React.PropTypes.func
+}
+
 export default translate()(App)
