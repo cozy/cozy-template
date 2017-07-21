@@ -28,7 +28,7 @@ module.exports = {
       {
         test: /\.jsx?$/,
         exclude: /node_modules/,
-        loader: 'eslint-loader'
+        loader: 'standard-loader'
       }
     ],
     loaders: [
@@ -52,6 +52,9 @@ module.exports = {
     noParse: [
       /localforage\/dist/
     ]
+  },
+  standard: {
+    parser: 'babel-eslint'
   },
   postcss: () => {
     return [
