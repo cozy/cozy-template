@@ -1,6 +1,8 @@
 Cozy Template
 =============
 
+⚠️ This repo is deprecated. Prefer to use https://github.com/cpatchane/cozy-create-app ⚠️ 
+
 What's Cozy?
 ------------
 
